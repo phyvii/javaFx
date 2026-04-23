@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<VBox style="-fx-background-color: orange" alignment="CENTER" prefHeight="142.0" prefWidth="162.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.HelloController">
+<GridPane alignment="CENTER" prefHeight="400.0" prefWidth="600.0"
+          style="-fx-background-color: linear-gradient(to bottom right, #1a1a2e, #16213e, #0f3460);"
+          xmlns="http://javafx.com/javafx/26"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.HelloController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" />
+        <ColumnConstraints hgrow="ALWAYS" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="ALWAYS" />
+    </rowConstraints>
+    <children>
+        <Label fx:id="welcomeLabel" text="Label"
+               style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"
+               GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
 
-    <Label fx:id="welcomeLabel" text="Naciśnij przycisk!" />
-   <Circle fill="DODGERBLUE" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-    <Button onAction="#onButtonClick" text="Kliknij mnie" />
-    <Button onAction="#openScenesWindow" text="Otwórz drugie okno" />
-    <Button fx:id="nextScene" text="Zmień scene" onAction="#changeScene"/>
-    <Button fx:id="fullscreen" text="fullscreen" onAction="#setFullscreen"/>
-</VBox>
+        <Button fx:id="welcomeButton" text="Click me!" onAction="#onButtonClick"
+                style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-size: 14; -fx-cursor: hand;"
+                GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+
+        <Button fx:id="fullscreen" text="Fullscreen" onAction="#setFullscreen"
+                style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-size: 14; -fx-cursor: hand;"
+                GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+
+        <Button fx:id="nextScene" text="Next scene" onAction="#changeScene"
+                style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-size: 14; -fx-cursor: hand;"
+                GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+
+        <Button fx:id="buttonScenes" text="New window" onAction="#openScenesWindow"
+                style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-background-radius: 8; -fx-font-size: 14; -fx-cursor: hand;"
+                GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+    </children>
+</GridPane>

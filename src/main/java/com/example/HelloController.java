@@ -18,6 +18,8 @@ public class HelloController {
     private Button nextScene;
     @FXML
     private Button fullscreen;
+    @FXML
+    private Button welcomeButton;
 
 
     @FXML
