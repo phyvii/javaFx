@@ -5,11 +5,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox alignment="CENTER" prefHeight="142.0" prefWidth="162.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.HelloController">
+<VBox style="-fx-background-color: orange" alignment="CENTER" prefHeight="142.0" prefWidth="162.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.HelloController">
 
     <Label fx:id="welcomeLabel" text="Naciśnij przycisk!" />
    <Circle fill="DODGERBLUE" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
     <Button onAction="#onButtonClick" text="Kliknij mnie" />
     <Button onAction="#openScenesWindow" text="Otwórz drugie okno" />
     <Button fx:id="nextScene" text="Zmień scene" onAction="#changeScene"/>
+    <Button fx:id="fullscreen" text="fullscreen" onAction="#setFullscreen"/>
 </VBox>
