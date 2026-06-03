@@ -41,11 +41,11 @@ public class HelloController {
     @FXML
     protected void openScenesWindow() throws Exception{
         FXMLLoader loader = new FXMLLoader(
-                MainApp.class.getResource("stages-view.fxml"));
-
+                MainApp.class.getResource("test.fxml")
+        );
         Stage stage = new Stage();
-        stage.setTitle("Scenes");
-        stage.setScene(new Scene(loader.load(),400,300));
+        stage.setTitle("Panel Logowania");
+        stage.setScene(new Scene(loader.load(), 1100, 700));
         stage.show();
     }
     @FXML
@@ -55,7 +55,7 @@ public class HelloController {
         );
 
         Stage stage = (Stage) nextScene.getScene().getWindow();
-        stage.setScene(new Scene(loader.load(),400,300));
+        stage.setScene(new Scene(loader.load(),1100,700));
         stage.setTitle("zmienione");
     }
 

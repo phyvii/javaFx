@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: #f5f7fa;"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.ShoppingCartController">
+   <children>
+
+      <!-- Nagłówek -->
+      <HBox prefWidth="900.0" prefHeight="58.0" alignment="CENTER_LEFT" spacing="16"
+            style="-fx-background-color: #2c7be5; -fx-padding: 0 28px;"
+            AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+         <children>
+            <Text text="🛒" style="-fx-font-size: 22px;"/>
+            <Text text="KASA — KOSZYK KLIENTA"
+                  style="-fx-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Text text="|" style="-fx-fill: #6ea8fe; -fx-font-size: 18px;"/>
+            <Text text="Kasjer: Anna Kowalska"
+                  style="-fx-fill: #cce0ff; -fx-font-size: 13px;"/>
+         </children>
+      </HBox>
+
+      <!-- LEWA: tabela produktów -->
+      <VBox spacing="12"
+            style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: #d1d9e6; -fx-border-radius: 10px; -fx-padding: 20px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 3);"
+            AnchorPane.topAnchor="78.0" AnchorPane.bottomAnchor="20.0"
+            AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="320.0">
+         <children>
+
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <children>
+                  <Label text="Produkty w koszyku"
+                         style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                  <Label text="3 produkty"
+                         style="-fx-background-color: #e8f0fe; -fx-text-fill: #2c7be5; -fx-background-radius: 20px; -fx-padding: 2px 10px; -fx-font-size: 11px; -fx-font-weight: bold;"/>
+               </children>
+            </HBox>
+
+            <TableView prefHeight="400.0"
+                       style="-fx-background-color: #f5f7fa; -fx-border-color: #e2e8f0; -fx-border-radius: 6px; -fx-background-radius: 6px;">
+               <columns>
+                  <TableColumn text="Nazwa produktu" prefWidth="210"/>
+                  <TableColumn text="Firma" prefWidth="130"/>
+                  <TableColumn text="Cena (zł)" prefWidth="90"/>
+                  <TableColumn text="Ilość" prefWidth="65"/>
+                  <TableColumn text="Data ważności" prefWidth="120"/>
+               </columns>
+               <placeholder>
+                  <Label text="Brak produktów w koszyku"
+                         style="-fx-text-fill: #aab0bc; -fx-font-size: 13px;"/>
+               </placeholder>
+            </TableView>
+
+            <HBox spacing="10">
+               <children>
+                  <Button text="＋  Dodaj produkt"
+                          style="-fx-background-color: #2c7be5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-padding: 9px 18px; -fx-font-size: 13px; -fx-cursor: hand;"/>
+                  <Button text="🗑  Usuń zaznaczony"
+                          style="-fx-background-color: white; -fx-text-fill: #e63946; -fx-font-weight: bold; -fx-background-radius: 6px; -fx-border-color: #e63946; -fx-border-width: 1px; -fx-border-radius: 6px; -fx-padding: 9px 18px; -fx-font-size: 13px; -fx-cursor: hand;"/>
+               </children>
+            </HBox>
+
+         </children>
+      </VBox>
+
+      <!-- PRAWA: podsumowanie -->
+      <VBox spacing="14"
+            style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-color: #d1d9e6; -fx-border-radius: 10px; -fx-padding: 24px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 3);"
+            AnchorPane.topAnchor="78.0" AnchorPane.bottomAnchor="20.0"
+            AnchorPane.rightAnchor="20.0" AnchorPane.leftAnchor="600.0">
+         <children>
+
+            <Label text="Podsumowanie"
+                   style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Separator/>
+
+            <!-- Status klienta -->
+            <Label text="STATUS KLIENTA"
+                   style="-fx-text-fill: #8a9ab0; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+               <children>
+                  <Label text="⚠ Niezarejestrowany"
+                         style="-fx-background-color: #fff3cd; -fx-text-fill: #856404; -fx-background-radius: 5px; -fx-padding: 5px 12px; -fx-font-size: 12px;"/>
+                  <Button text="Zarejestruj"
+                          style="-fx-background-color: transparent; -fx-text-fill: #2c7be5; -fx-font-size: 12px; -fx-cursor: hand; -fx-border-color: #2c7be5; -fx-border-radius: 4px; -fx-padding: 4px 10px;"/>
+               </children>
+            </HBox>
+
+            <Separator/>
+
+            <!-- Kwoty -->
+            <Label text="KWOTA"
+                   style="-fx-text-fill: #8a9ab0; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <Label text="Suma:" style="-fx-text-fill: #5a6a85; -fx-font-size: 13px;" HBox.hgrow="ALWAYS"/>
+                  <Label text="89.97 zł" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <Label text="Zniżka:" style="-fx-text-fill: #5a6a85; -fx-font-size: 13px;"/>
+                  <Label text="—" style="-fx-font-size: 13px; -fx-text-fill: #aab0bc;"/>
+               </children>
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="8"
+                  style="-fx-background-color: #f0f6ff; -fx-background-radius: 6px; -fx-padding: 10px;">
+               <children>
+                  <Label text="DO ZAPŁATY:" style="-fx-font-weight: bold; -fx-font-size: 13px; -fx-text-fill: #2c3e50;"/>
+                  <Label text="89.97 zł" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c7be5;"/>
+               </children>
+            </HBox>
+
+            <Separator/>
+
+            <!-- Faktura -->
+            <Label text="FAKTURA"
+                   style="-fx-text-fill: #8a9ab0; -fx-font-size: 10px; -fx-font-weight: bold;"/>
+            <CheckBox text="Klient chce fakturę"
+                      style="-fx-font-size: 13px; -fx-text-fill: #2c3e50;"/>
+
+            <Separator/>
+
+            <!-- Przyciski -->
+            <Button text="✔  ZAPŁAĆ"
+                    prefWidth="240.0"
+                    style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6px; -fx-padding: 13px; -fx-cursor: hand;"/>
+            <Button text="✖  Anuluj zakup"
+                    prefWidth="240.0"
+                    style="-fx-background-color: white; -fx-text-fill: #e63946; -fx-font-size: 13px; -fx-border-color: #e63946; -fx-border-width: 1px; -fx-border-radius: 6px; -fx-padding: 9px; -fx-cursor: hand;"/>
+
+         </children>
+      </VBox>
+
+   </children>
+</AnchorPane>
