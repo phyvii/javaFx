@@ -1,4 +1,4 @@
-package Model;
+package Model.Extent;
 
 import java.io.*;
 import java.util.*;

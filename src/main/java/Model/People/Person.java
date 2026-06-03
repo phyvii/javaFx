@@ -1,8 +1,10 @@
-package Model;
+package Model.People;
+
+import Model.Extent.ObjectPlus;
 
 import java.time.LocalDate;
 
-public abstract class Person extends ObjectPlus{
+public abstract class Person extends ObjectPlus {
     private String name;
     private String surname;
     private LocalDate birthDate;
