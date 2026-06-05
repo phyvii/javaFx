@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public abstract class Worker extends Person {
     private int id;
-    //private Owner owner;
+    private Owner owner;
     private LocalDate contractStartDate;
     private LocalDate contractEndDate;
     private String schedule;
@@ -20,7 +20,7 @@ public abstract class Worker extends Person {
     }
 
     public Worker(String name, String surname, LocalDate birthDate, Long PESEL, int id, LocalDate contractStartDate,
-                  LocalDate contractEndDate, String schedule, double standardPay, int behaviorGrad, double payAfterBonuses,
+                  LocalDate contractEndDate, String schedule, double standardPay, double payAfterBonuses,
                   String login, String password) {
         super(name, surname, birthDate, PESEL);
         this.id = id;
@@ -28,7 +28,6 @@ public abstract class Worker extends Person {
         this.contractEndDate = contractEndDate;
         this.schedule = schedule;
         this.standardPay = standardPay;
-        this.behaviorGrad = behaviorGrad;
         this.payAfterBonuses = payAfterBonuses;
         this.login = login;
         this.password = password;
@@ -66,9 +65,10 @@ public abstract class Worker extends Person {
         this.schedule = schedule;
     }
 
-    public double getStandardPay() {
+    public double getIncome() {
         return standardPay;
     }
+
 
     public void setStandardPay(double standardPay) {
         this.standardPay = standardPay;
