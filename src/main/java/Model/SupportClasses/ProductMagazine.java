@@ -11,15 +11,15 @@ public class ProductMagazine extends ObjectPlus {
     private Magazine magazine;
     private Product product;
 
-    public ProductMagazine(LocalDate arrivalDate, int count, int totalSpaceTaken, Magazine magazine, Product product) {
+    public ProductMagazine(LocalDate arrivalDate, int count, Magazine magazine, Product product) {
         this.arrivalDate = arrivalDate;
         this.count = count;
-        this.totalSpaceTaken = totalSpaceTaken;
         this.magazine = magazine;
         this.product = product;
 
-        magazine.addProductMagazineRelation(this);
         product.addProductMagazineRelation(this);
+        magazine.addProductMagazineRelation(this);
+
     }
 
     public void remove(){

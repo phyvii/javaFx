@@ -3,6 +3,7 @@ package Model.SupportClasses;
 import Model.Extent.ObjectPlus;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Product extends ObjectPlus {
@@ -24,11 +25,13 @@ public abstract class Product extends ObjectPlus {
         this.expirationDate = expirationDate;
         this.price = price;
         this.spaceTaken = spaceTaken;
+        productMagazines = new ArrayList<>();
     }
 
     protected void addProductMagazineRelation(ProductMagazine pm){
         if(!productMagazines.contains(pm)){
             productMagazines.add(pm);
+            pm.setTotalSpaceTaken(spaceTaken*pm.getCount());
         }
     }
     protected void removeProductMagazineRelation(ProductMagazine pm){
